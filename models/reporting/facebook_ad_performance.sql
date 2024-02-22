@@ -23,6 +23,5 @@ date_granularity,
 spend,
 impressions,
 link_clicks,
-purchases,
-revenue
+submit_application_total as applications_submitted
 FROM {{ ref('facebook_performance_by_ad') }}
