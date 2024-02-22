@@ -1,9 +1,6 @@
 packages:
   - git: "https://github.com/superbolt-x/bolt-dbt-utils.git"
     revision: main
-    
-  - git: "https://github.com/superbolt-x/bolt-dbt-facebook-package.git"
-    revision: main
 
   - git: "https://github.com/superbolt-x/bolt-dbt-googleads-package.git"
     revision: main

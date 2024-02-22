@@ -1,0 +1,80 @@
+version: 2
+
+sources:
+  - name: facebook_raw
+    schema: facebook_raw
+    tables:
+      - name: ads
+        identifier: ad_history
+        columns: 
+          - name: id
+        
+      - name: ads__labels
+        identifier: label_history
+      - name: ads__previews
+        identifier: facebook_adpreview
+
+      - name: ads_insights
+        identifier: ads_insights
+      
+        freshness: 
+          warn_after: {count: 24, period: hour}
+
+        loaded_at_field: _fivetran_synced
+        
+      - name: ads_insights_age
+        identifier: ads_insights_age
+      - name: ads_insights_actions
+        identifier: ads_insights_actions
+      - name: ads_insights_action_values
+        identifier: ads_insights_action_values
+      - name: ads_insights_conversions
+        identifier: ads_insights_conversions
+      - name: ads_insights_conversion_values
+        identifier: ads_insights_conversion_values
+      - name: ads_insights_age_actions
+        identifier: ads_insights_age_actions
+      - name: ads_insights_age_action_values
+        identifier: ads_insights_age_action_values
+      - name: ads_insights_age_conversions
+        identifier: ads_insights_age_conversions
+      - name: ads_insights_age_conversion_values
+        identifier: ads_insights_age_conversion_values
+      - name: adsets
+        identifier: ad_set_history          
+      - name: campaigns
+        identifier: campaign_history
+      - name: accounts
+        identifier: account_history
+
+models:
+  - name: facebook_ads
+    columns:
+      - name: unique_key
+        tests: 
+          - unique
+          - not_null
+  - name: facebook_adsets
+    columns:
+      - name: unique_key
+        tests: 
+          - unique
+          - not_null
+  - name: facebook_campaigns
+    columns:
+      - name: unique_key
+        tests: 
+          - unique
+          - not_null
+  - name: facebook_accounts
+    columns:
+      - name: unique_key
+        tests: 
+          - unique
+          - not_null
+  - name: facebook_ads_insights 
+    columns:
+      - name: unique_key
+        tests: 
+          - unique
+          - not_null
