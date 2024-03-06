@@ -1,1 +1,9 @@
 version: 2
+
+sources:
+
+- name: gsheet_raw
+  schema: gsheet_raw
+  tables:
+    - name: unbounce_daily_performance
+      identifer: unbounce_daily_performance
