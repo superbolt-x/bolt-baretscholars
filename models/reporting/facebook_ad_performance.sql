@@ -24,5 +24,5 @@ spend,
 impressions,
 link_clicks,
 submit_application_total as applications_submitted,
-submit_application_total+onfacebook_leads as leads
+onfacebook_leads as leads
 FROM {{ ref('facebook_performance_by_ad') }}
